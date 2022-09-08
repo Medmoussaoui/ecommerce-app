@@ -17,15 +17,15 @@ class _CustomImageSliderState extends State<CustomImageSlider>
   @override
   void initState() {
     animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 600));
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
     dx = Tween<double>(begin: 70.0, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Curves.easeInOut,
       ),
-    )..addListener(() {
-        setState(() {});
-      });
+    )..addListener(() => setState(() {}));
 
     animationController.forward();
 

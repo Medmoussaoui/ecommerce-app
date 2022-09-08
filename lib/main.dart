@@ -1,11 +1,13 @@
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/routes.dart';
-import 'package:ecommercecourse/view/screen/auth/login_page.dart';
 import 'package:ecommercecourse/view/screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
 }
 
