@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/localization/app_translation.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/routes.dart';
 import 'package:ecommercecourse/view/screen/onboarding_screen.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      translations: AppTranslation(),
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: TextTheme(

@@ -13,6 +13,7 @@ class _CustomImageSliderState extends State<CustomImageSlider>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> dx;
+  late Animation<double> opacity;
 
   @override
   void initState() {
@@ -26,6 +27,13 @@ class _CustomImageSliderState extends State<CustomImageSlider>
         curve: Curves.easeInOut,
       ),
     )..addListener(() => setState(() {}));
+
+    opacity = Tween<double>(begin: 0.4, end: 1).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.linear,
+      ),
+    );
 
     animationController.forward();
 
@@ -45,7 +53,8 @@ class _CustomImageSliderState extends State<CustomImageSlider>
       child: SizedBox(
         height: 300,
         width: 300,
-        child: Image.asset(widget.imagePath),
+        child: Opacity(
+            opacity: opacity.value, child: Image.asset(widget.imagePath)),
       ),
     );
   }
