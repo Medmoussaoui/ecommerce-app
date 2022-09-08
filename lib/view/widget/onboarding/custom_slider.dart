@@ -19,14 +19,8 @@ class CustomSliderOnBoarding extends GetView<OnBoardingController> {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Text(
-              onBoardingList[index].title,
-              style: TextStyle(
-                fontFamily: 'FredokaOne',
-                fontSize: 20.0,
-                color: AppColor.blackGrey,
-              ),
-            ),
+            Text(onBoardingList[index].title,
+                style: Theme.of(context).textTheme.headline1),
             const Spacer(),
             SizedBox(
               height: 300,
@@ -37,11 +31,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingController> {
             Text(
               onBoardingList[index].body,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Figtree',
-                fontWeight: FontWeight.w500,
-                color: AppColor.grey,
-              ),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             const Spacer(),
           ],

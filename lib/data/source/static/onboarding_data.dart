@@ -8,7 +8,7 @@ List<OnBoardingModule> onBoardingList = [
     AppImageAsset.onDoardingProducts,
   ),
   OnBoardingModule(
-    'Easy & Ssafe Payment',
+    'Easy & Safe Payment',
     'Easy Checkout & Safe Payment methode \n Trusted by our Custemers from \n all over the word',
     AppImageAsset.onDoardingPayment,
   ),
