@@ -1,7 +1,6 @@
 import 'package:ecommercecourse/controller/onboarding_controller.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/data/source/static/onboarding_data.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecommercecourse/view/widget/onboarding/Custom_midlle_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,11 +21,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingController> {
             Text(onBoardingList[index].title,
                 style: Theme.of(context).textTheme.headline1),
             const Spacer(),
-            SizedBox(
-              height: 300,
-              width: 300,
-              child: Image.asset(onBoardingList[index].imagePath),
-            ),
+            CustomImageSlider(imagePath: onBoardingList[index].imagePath),
             const Spacer(),
             Text(
               onBoardingList[index].body,

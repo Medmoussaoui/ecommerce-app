@@ -1,6 +1,5 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/data/source/static/onboarding_data.dart';
-import 'package:ecommercecourse/view/screen/auth/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +13,7 @@ class OnBoardingController extends GetxController {
   @override
   void onInit() {
     pageController = PageController();
+
     super.onInit();
   }
 
@@ -26,7 +26,7 @@ class OnBoardingController extends GetxController {
     pageController
         .animateToPage(
           currentPage.value,
-          duration: const Duration(milliseconds: 700),
+          duration: const Duration(milliseconds: 400),
           curve: Curves.easeInOut,
         )
         .then((value) => syncanimateToPage = false);
