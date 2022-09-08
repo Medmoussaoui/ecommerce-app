@@ -1,4 +1,6 @@
-import 'package:ecommercecourse/view/screen/onboarding.dart';
+import 'package:ecommercecourse/routes.dart';
+import 'package:ecommercecourse/view/screen/auth/login_page.dart';
+import 'package:ecommercecourse/view/screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,22 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color(0xff6c63ff),
       ),
-      home: const OnBoarding(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Millioner'),
-        centerTitle: true,
-      ),
-      body: const Center(child: Text('Master Flutter')),
+      home: OnBoardingScreen(),
+      getPages: routes,
     );
   }
 }

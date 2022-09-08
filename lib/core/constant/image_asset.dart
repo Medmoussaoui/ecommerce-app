@@ -1,4 +1,4 @@
-class ImageAsset {
+class AppImageAsset {
   static const String rootImages = 'assets/images';
   static const String onDoardingDelivery = "$rootImages/3.png";
   static const String onDoardingPayment = "$rootImages/1.png";
