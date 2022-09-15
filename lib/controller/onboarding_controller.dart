@@ -19,7 +19,7 @@ class OnBoardingController extends GetxController {
 
   next() {
     if (currentPage.value == onBoardingList.length - 1) {
-      return Get.toNamed(AppRoute.login);
+      return Get.toNamed(AppRoute.authScreen);
     }
     currentPage++;
     syncanimateToPage = true;
