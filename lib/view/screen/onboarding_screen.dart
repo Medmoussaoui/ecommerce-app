@@ -1,5 +1,6 @@
 import 'package:ecommercecourse/controller/onboarding_controller.dart';
-import 'package:ecommercecourse/view/widget/onboarding/Custom_button.dart';
+import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
+import 'package:ecommercecourse/data/source/static/onboarding_data.dart';
 import 'package:ecommercecourse/view/widget/onboarding/custom_slider.dart';
 import 'package:ecommercecourse/view/widget/onboarding/dot_controller.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import 'package:get/get.dart';
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
 
-  final putController = Get.put(OnBoardingController());
+  final controller = Get.put(OnBoardingController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,22 @@ class OnBoardingScreen extends StatelessWidget {
               ),
               Expanded(
                 child: Column(
-                  children: const [
-                    CustomDotControllerOnBoarding(),
-                    Spacer(),
-                    CustomButtonOnBoarding(),
+                  children: [
+                    const CustomDotControllerOnBoarding(),
+                    const Spacer(),
+                    GetX<OnBoardingController>(
+                      builder: (con) {
+                        return CustomPrimaryButton(
+                          buttonText: con.currentPage.value ==
+                                  (onBoardingList.length - 1)
+                              ? '5'.tr
+                              : '6'.tr,
+                          onPressed: () {
+                            controller.next();
+                          },
+                        );
+                      },
+                    ),
                   ],
                 ),
               )
