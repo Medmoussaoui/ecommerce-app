@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: localeController.langcode == 'ar' ? 'Noto' : 'Figtree',
         scaffoldBackgroundColor: Colors.white,
+        colorScheme:
+            ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
         textTheme: TextTheme(
           headline1: TextStyle(
             fontFamily: 'FredokaOne',
@@ -34,8 +36,8 @@ class MyApp extends StatelessWidget {
           ),
           bodyText1: TextStyle(
             fontFamily: 'Figtree',
-            fontWeight: FontWeight.w500,
             color: AppColor.grey,
+            fontWeight: FontWeight.w500,
           ),
           bodyText2: TextStyle(
             fontWeight: FontWeight.w500,
@@ -43,11 +45,11 @@ class MyApp extends StatelessWidget {
             color: AppColor.grey.withOpacity(0.5),
           ),
         ),
-        primaryColor: const Color(0xff6c63ff),
+        primaryColor: AppColor.primaryColor,
       ),
       translations: AppTranslation(),
       locale: localeController.language,
-      initialRoute: AppRoute.onBoarding,
+      initialRoute: AppRoute.signUp,
       getPages: routes,
     );
   }

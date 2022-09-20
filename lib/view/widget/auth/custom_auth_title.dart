@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class CustomAuthTitle extends StatelessWidget {
@@ -15,10 +16,10 @@ class CustomAuthTitle extends StatelessWidget {
     return Text(
       title,
       textAlign: TextAlign.center,
-      style: const TextStyle(
-        fontSize: 37.0,
+      style: TextStyle(
+        fontSize: fontSize,
         fontFamily: 'FredokaOne',
-        color: Colors.black87,
+        color: AppColor.blackGrey,
       ),
     );
   }

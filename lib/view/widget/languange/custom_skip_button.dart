@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class CustomSkipButton extends GetView<LocaleController> {
             : Alignment.topRight,
         child: InkWell(
           onTap: () {
-            Get.toNamed('/onboarding');
+            Get.toNamed(AppRoute.onBoarding);
           },
           child: Text(
             '5'.tr,
