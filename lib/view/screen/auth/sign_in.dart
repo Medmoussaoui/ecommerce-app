@@ -1,7 +1,7 @@
-import 'package:ecommercecourse/core/constant/app_routes.dart';
+import 'package:ecommercecourse/controller/sign_in_controller.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
-import 'package:ecommercecourse/view/widget/auth/cusrom_forget_password.dart';
+import 'package:ecommercecourse/view/widget/auth/cusrom_redirect_forget_password.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sign_with.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_or_divider.dart';
@@ -11,13 +11,13 @@ import 'package:ecommercecourse/view/widget/auth/guidance_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final SignInController controller = Get.put(SignInController());
     return Scaffold(
-      //backgroundColor: Colors.grey[50],
       body: SingleChildScrollView(
         child: SizedBox(
           height: Get.height,
@@ -42,23 +42,34 @@ class LoginScreen extends StatelessWidget {
                             'Sign with your email and password or continue with social media'),
                   ),
                   const SizedBox(height: 40.0),
-                  const CustomTextFormAuth(
+                  CustomTextFormAuth(
                     hintText: 'Enter email address',
                     icon: Icons.email_rounded,
+                    controller: controller.emailController,
                   ),
                   const SizedBox(height: 15),
-                  const CustomTextFormAuth(
+                  CustomTextFormAuth(
                     hintText: 'Enter password',
                     isSecure: true,
                     icon: Icons.lock_rounded,
+                    controller: controller.passwordController,
                   ),
                   const SizedBox(height: 5.0),
-                  const Align(
+                  Align(
                     alignment: Alignment.centerRight,
-                    child: CustomForgetPassword(),
+                    child: CustomRedirectForgetPassword(
+                      onPressed: () {
+                        controller.redirectToForgetPassword();
+                      },
+                    ),
                   ),
                   const Spacer(),
-                  const CustomPrimaryButton(buttonText: 'Sign In'),
+                  CustomPrimaryButton(
+                    buttonText: 'Sign In',
+                    onPressed: () {
+                      controller.signIn();
+                    },
+                  ),
                   const CustomOrDivider(text: 'or Sign In with'),
                   const Padding(
                     padding: EdgeInsets.only(top: 22, bottom: 18.0),
@@ -68,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                     title: "I don't have an account",
                     tapText: 'Sign Up',
                     onTap: () {
-                      Get.toNamed(AppRoute.signUp);
+                      controller.redirectToSignUp();
                     },
                   ),
                 ],

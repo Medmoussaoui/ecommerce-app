@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       ),
       translations: AppTranslation(),
       locale: localeController.language,
-      initialRoute: AppRoute.signUp,
+      initialRoute: AppRoute.successResetPassword,
       getPages: routes,
     );
   }

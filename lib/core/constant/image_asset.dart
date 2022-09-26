@@ -11,4 +11,8 @@ class AppImageAsset {
   static const String facebook = "$rootImages/f.png";
   static const String google = "$rootImages/g.png";
   static const String logo = "$rootImages/logo.png";
+  static const String forgetPassword = "$rootImages/forget_password.png";
+  static const String email = "$rootImages/custom_mail.png";
+  static const String resetPassword = "$rootImages/reset_password.png";
+  static const String success = "$rootImages/success.png";
 }

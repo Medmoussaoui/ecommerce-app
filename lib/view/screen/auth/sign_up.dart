@@ -1,8 +1,9 @@
+import 'package:ecommercecourse/controller/sign_up_controller.dart';
 import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
-import 'package:ecommercecourse/view/widget/auth/cusrom_forget_password.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
+import 'package:ecommercecourse/view/widget/auth/custom_full_name_form.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sign_with.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_or_divider.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
@@ -11,13 +12,13 @@ import 'package:ecommercecourse/view/widget/auth/guidance_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CreateAccount extends StatelessWidget {
-  const CreateAccount({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final SignUpController controller = Get.put(SignUpController());
     return Scaffold(
-      //backgroundColor: Colors.grey[50],
       body: SingleChildScrollView(
         child: SizedBox(
           height: Get.height,
@@ -42,36 +43,26 @@ class CreateAccount extends StatelessWidget {
                             'Create an account by custom email or sign with social media '),
                   ),
                   const SizedBox(height: 40.0),
-                  Row(
-                    children: const [
-                      Expanded(
-                        child: CustomTextFormAuth(
-                          hintText: 'First name',
-                        ),
-                      ),
-                      SizedBox(width: 15),
-                      Expanded(
-                        child: CustomTextFormAuth(
-                          hintText: 'Last name',
-                        ),
-                      ),
-                    ],
-                  ),
+                  const CustomFullNameForm(),
                   const SizedBox(height: 15),
-                  const CustomTextFormAuth(
+                  CustomTextFormAuth(
                     hintText: 'Enter email address',
                     icon: Icons.email_rounded,
+                    controller: controller.emailController,
                   ),
                   const SizedBox(height: 15),
-                  const CustomTextFormAuth(
+                  CustomTextFormAuth(
                     hintText: 'Enter password',
                     isSecure: true,
                     icon: Icons.lock_rounded,
+                    controller: controller.passwordController,
                   ),
                   const Spacer(),
                   CustomPrimaryButton(
                     buttonText: 'Sign up',
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.signUp();
+                    },
                   ),
                   const CustomOrDivider(text: 'or Sign In with'),
                   const Padding(
