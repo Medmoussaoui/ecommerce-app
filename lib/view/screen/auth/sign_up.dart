@@ -34,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                     child: Image.asset(AppImageAsset.logo),
                   ),
                   const SizedBox(height: 25.0),
-                  const CustomAuthTitle(title: "Let's Sign up", fontSize: 24.0),
+                  const CustomAuthTitle(title: "Let's Sign up"),
                   const SizedBox(height: 15.0),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5.0),

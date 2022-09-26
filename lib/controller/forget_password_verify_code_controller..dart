@@ -10,6 +10,8 @@ class ForgetPasswordVerifyCodeController extends GetxController {
     }
   }
 
+  resendCode() {}
+
   redirectToResetPassword() {
     Get.toNamed(AppRoute.resetPassword);
   }

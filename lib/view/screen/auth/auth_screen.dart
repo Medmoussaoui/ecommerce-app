@@ -20,24 +20,22 @@ class AuthScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10, right: 20, left: 20),
           child: Column(
             children: [
-              const CustomAuthTitle(title: "Welcome To\n Yalavex"),
+              CustomAuthTitle(title: "15".tr, fontSize: 35),
               const SizedBox(height: 30),
-              const CustomSubTitle(
-                  subtitle:
-                      'Enjoy yalavex you can buy any thing from any where you like in the world with fast \n shipping like never beffore'),
+              CustomSubTitle(subtitle: '16'.tr),
               const Spacer(),
               CustomPrimaryButton(
-                buttonText: 'Create an Account',
+                buttonText: '17'.tr,
                 onPressed: () {},
               ),
-              const CustomOrDivider(text: 'or Sign Up with'),
+              CustomOrDivider(text: '18'.tr),
               const Padding(
                 padding: EdgeInsets.only(top: 22, bottom: 18.0),
                 child: CustomSignWith(),
               ),
               GuidanceText(
-                title: 'I aready have an account',
-                tapText: 'Sign In',
+                title: '19'.tr,
+                tapText: '1'.tr,
                 onTap: () {
                   Get.toNamed(AppRoute.signIn);
                 },

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class CustomAuthTitle extends StatelessWidget {
   final String title;
-  final double fontSize;
+  final double? fontSize;
 
   const CustomAuthTitle({
     Key? key,
     required this.title,
-    this.fontSize = 37.0,
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -16,11 +16,10 @@ class CustomAuthTitle extends StatelessWidget {
     return Text(
       title,
       textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: fontSize,
-        fontFamily: 'FredokaOne',
-        color: AppColor.blackGrey,
-      ),
+      style: Theme.of(context)
+          .textTheme
+          .headlineLarge!
+          .copyWith(fontSize: fontSize),
     );
   }
 }

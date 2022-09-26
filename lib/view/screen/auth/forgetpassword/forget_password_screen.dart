@@ -33,7 +33,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CustomAuthTitle(title: 'Forget Password', fontSize: 21.0),
+                const CustomAuthTitle(title: 'Forget Password'),
                 const SizedBox(height: 15),
                 const CustomSubTitle(
                   subtitle:

@@ -34,10 +34,7 @@ class ForgetPasswordVerifyCodeScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CustomAuthTitle(
-                  title: 'Check your email',
-                  fontSize: 21.0,
-                ),
+                const CustomAuthTitle(title: 'Check your email'),
                 const SizedBox(height: 15),
                 const CustomSubTitle(
                   subtitle:
@@ -65,7 +62,9 @@ class ForgetPasswordVerifyCodeScreen extends StatelessWidget {
                 GuidanceText(
                   title: "Didn't recieve code?",
                   tapText: 'Resend',
-                  onTap: () {},
+                  onTap: () {
+                    controller.resendCode();
+                  },
                 ),
                 const Spacer(flex: 3),
                 CustomPrimaryButton(

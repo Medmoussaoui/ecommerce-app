@@ -29,10 +29,7 @@ class SuccessResetPasswordScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const CustomAuthTitle(
-                title: 'Password Changed',
-                fontSize: 21.0,
-              ),
+              const CustomAuthTitle(title: 'Password Changed'),
               const SizedBox(height: 15),
               const CustomSubTitle(
                 subtitle: 'Your old password has been changed successfuly!',

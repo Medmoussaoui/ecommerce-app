@@ -20,26 +20,19 @@ class GuidanceText extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: AppColor.grey.withOpacity(0.4),
-            fontSize: 14.0,
-          ),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         TextButton(
           style: TextButton.styleFrom(
             minimumSize: Size.zero,
-            padding: EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(5.0),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
           onPressed: onTap,
           child: Text(
             tapText,
-            style: TextStyle(
-              fontSize: 14.5,
-              fontWeight: FontWeight.w600,
-              color: AppColor.primaryColor,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: AppColor.primaryColor, fontWeight: FontWeight.w600),
           ),
         ),
       ],

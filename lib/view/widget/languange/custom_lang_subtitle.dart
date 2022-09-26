@@ -8,7 +8,7 @@ class CustomLangSubtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '4'.tr,
-      style: Theme.of(context).textTheme.bodyText2,
+      style: Theme.of(context).textTheme.bodyLarge,
     );
   }
 }

@@ -12,7 +12,7 @@ class CustomSubTitle extends StatelessWidget {
     return Text(
       subtitle,
       textAlign: textAlign,
-      style: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 15.7),
+      style: Theme.of(context).textTheme.bodyLarge,
     );
   }
 }

@@ -21,7 +21,6 @@ class OnBoardingScreen extends StatelessWidget {
             left: 15,
             right: 15,
             top: 30,
-            bottom: 15,
           ),
           child: Column(
             children: [

@@ -21,7 +21,7 @@ class CustomPrimaryButton extends StatelessWidget {
       padding: EdgeInsets.only(bottom: bottomPadding, top: topPadding),
       child: MaterialButton(
         disabledColor: AppColor.grey.withOpacity(0.1),
-        padding: const EdgeInsets.symmetric(vertical: 18.0),
+        height: 57,
         minWidth: double.infinity,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(7.0),

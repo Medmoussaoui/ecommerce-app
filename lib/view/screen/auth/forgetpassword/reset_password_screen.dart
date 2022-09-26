@@ -33,10 +33,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CustomAuthTitle(
-                  title: 'Create New Password',
-                  fontSize: 21.0,
-                ),
+                const CustomAuthTitle(title: 'Create New Password'),
                 const SizedBox(height: 15),
                 const CustomSubTitle(
                   subtitle:

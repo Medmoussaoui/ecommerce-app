@@ -33,7 +33,7 @@ class SignInScreen extends StatelessWidget {
                     child: Image.asset(AppImageAsset.logo),
                   ),
                   const SizedBox(height: 25.0),
-                  const CustomAuthTitle(title: "Let's sign in", fontSize: 24.0),
+                  const CustomAuthTitle(title: "Let's sign in"),
                   const SizedBox(height: 15.0),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5.0),
@@ -55,13 +55,9 @@ class SignInScreen extends StatelessWidget {
                     controller: controller.passwordController,
                   ),
                   const SizedBox(height: 5.0),
-                  Align(
+                  const Align(
                     alignment: Alignment.centerRight,
-                    child: CustomRedirectForgetPassword(
-                      onPressed: () {
-                        controller.redirectToForgetPassword();
-                      },
-                    ),
+                    child: CustomRedirectForgetPassword(),
                   ),
                   const Spacer(),
                   CustomPrimaryButton(

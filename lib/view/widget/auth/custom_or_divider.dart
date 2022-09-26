@@ -16,15 +16,7 @@ class CustomOrDivider extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Figtree',
-              fontWeight: FontWeight.w500,
-              color: AppColor.grey.withOpacity(0.4),
-              fontSize: 13.5,
-            ),
-          ),
+          child: Text(text, style: Theme.of(context).textTheme.bodySmall),
         ),
         Expanded(child: Divider(color: Colors.grey[400])),
       ],

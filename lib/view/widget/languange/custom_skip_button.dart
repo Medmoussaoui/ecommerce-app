@@ -1,5 +1,4 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,14 +18,8 @@ class CustomSkipButton extends GetView<LocaleController> {
           onTap: () {
             Get.toNamed(AppRoute.onBoarding);
           },
-          child: Text(
-            '5'.tr,
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              color: AppColor.blackGrey,
-              fontSize: 17.0,
-            ),
-          ),
+          child:
+              Text('5'.tr, style: Theme.of(context).textTheme.headlineSmall!),
         ),
       ),
     );

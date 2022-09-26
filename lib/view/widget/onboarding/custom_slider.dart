@@ -19,14 +19,14 @@ class CustomSliderOnBoarding extends GetView<OnBoardingController> {
         return Column(
           children: [
             Text(onBoardingList[index].title,
-                style: Theme.of(context).textTheme.headline1),
+                style: Theme.of(context).textTheme.headlineLarge),
             const Spacer(),
             CustomImageSlider(imagePath: onBoardingList[index].imagePath),
             const Spacer(),
             Text(
               onBoardingList[index].body,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),
           ],

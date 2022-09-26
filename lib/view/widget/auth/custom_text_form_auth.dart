@@ -32,7 +32,7 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
         hintStyle: Theme.of(context)
             .textTheme
             .bodyText1!
-            .copyWith(fontSize: 15.5, fontWeight: FontWeight.w400),
+            .copyWith(fontSize: 14.5, fontWeight: FontWeight.w400),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(7.0),
         ),
