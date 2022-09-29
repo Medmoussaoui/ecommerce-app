@@ -5,7 +5,6 @@ import 'package:ecommercecourse/view/widget/auth/cusrom_redirect_forget_password
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sign_with.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_or_divider.dart';
-import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_text_form_auth.dart';
 import 'package:ecommercecourse/view/widget/auth/guidance_text.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class SignInScreen extends StatelessWidget {
           child: Center(
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: 50, right: 20, left: 20, bottom: 10),
+                  top: 50, right: 20, left: 20, bottom: 5.0),
               child: Column(
                 children: [
                   SizedBox(
@@ -32,24 +31,17 @@ class SignInScreen extends StatelessWidget {
                     width: 50,
                     child: Image.asset(AppImageAsset.logo),
                   ),
-                  const SizedBox(height: 25.0),
-                  const CustomAuthTitle(title: "Let's sign in"),
-                  const SizedBox(height: 15.0),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5.0),
-                    child: CustomSubTitle(
-                        subtitle:
-                            'Sign with your email and password or continue with social media'),
-                  ),
-                  const SizedBox(height: 40.0),
+                  const SizedBox(height: 22.0),
+                  CustomAuthTitle(title: "20".tr),
+                  const Spacer(),
                   CustomTextFormAuth(
-                    hintText: 'Enter email address',
+                    hintText: '22'.tr,
                     icon: Icons.email_rounded,
                     controller: controller.emailController,
                   ),
                   const SizedBox(height: 15),
                   CustomTextFormAuth(
-                    hintText: 'Enter password',
+                    hintText: '23'.tr,
                     isSecure: true,
                     icon: Icons.lock_rounded,
                     controller: controller.passwordController,
@@ -61,19 +53,19 @@ class SignInScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   CustomPrimaryButton(
-                    buttonText: 'Sign In',
+                    buttonText: '1'.tr,
                     onPressed: () {
                       controller.signIn();
                     },
                   ),
-                  const CustomOrDivider(text: 'or Sign In with'),
+                  CustomOrDivider(text: '24'.tr),
                   const Padding(
                     padding: EdgeInsets.only(top: 22, bottom: 18.0),
                     child: CustomSignWith(),
                   ),
                   GuidanceText(
-                    title: "I don't have an account",
-                    tapText: 'Sign Up',
+                    title: "25".tr,
+                    tapText: '2'.tr,
                     onTap: () {
                       controller.redirectToSignUp();
                     },

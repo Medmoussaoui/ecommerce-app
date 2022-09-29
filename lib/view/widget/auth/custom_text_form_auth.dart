@@ -24,41 +24,41 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      obscureText: widget.isSecure && !showPassword,
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-        hintStyle: Theme.of(context)
-            .textTheme
-            .bodyText1!
-            .copyWith(fontSize: 14.5, fontWeight: FontWeight.w400),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(7.0),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(7.0),
-          borderSide: BorderSide(
-            width: 1.5,
-            color: AppColor.primaryColor.withOpacity(0.9),
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: TextFormField(
+        controller: widget.controller,
+        obscureText: widget.isSecure && !showPassword,
+        decoration: InputDecoration(
+          hintText: widget.hintText,
+          hintStyle: Theme.of(context).textTheme.bodySmall,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7.0),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7.0),
+            borderSide: BorderSide(
+              width: 1.5,
+              color: AppColor.primaryColor.withOpacity(0.9),
+            ),
+          ),
+          suffixIcon: widget.isSecure
+              ? InkWell(
+                  borderRadius: BorderRadius.circular(200),
+                  onTap: () {
+                    setState(() {
+                      showPassword = !showPassword;
+                    });
+                  },
+                  child: Icon(
+                    showPassword ? Icons.visibility_off : Icons.visibility,
+                    size: 22,
+                  ),
+                )
+              : null,
+          prefixIconColor: AppColor.primaryColor,
+          prefixIcon: widget.icon != null ? Icon(widget.icon, size: 22) : null,
         ),
-        suffixIcon: widget.isSecure
-            ? InkWell(
-                borderRadius: BorderRadius.circular(200),
-                onTap: () {
-                  setState(() {
-                    showPassword = !showPassword;
-                  });
-                },
-                child: Icon(
-                  showPassword ? Icons.visibility_off : Icons.visibility,
-                  size: 22,
-                ),
-              )
-            : null,
-        prefixIconColor: AppColor.primaryColor,
-        prefixIcon: widget.icon != null ? Icon(widget.icon, size: 22) : null,
       ),
     );
   }

@@ -33,23 +33,22 @@ class ResetPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CustomAuthTitle(title: 'Create New Password'),
+                CustomAuthTitle(title: '35'.tr),
                 const SizedBox(height: 15),
-                const CustomSubTitle(
-                  subtitle:
-                      'At least 9 characters, with uppercase and lowercase letters',
+                CustomSubTitle(
+                  subtitle: '36'.tr,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 40.0),
                 CustomTextFormAuth(
-                  hintText: 'Enter new password',
+                  hintText: '37'.tr,
                   icon: Icons.lock_rounded,
                   isSecure: true,
                   controller: controller.newPasswordField,
                 ),
                 const SizedBox(height: 15),
                 CustomTextFormAuth(
-                  hintText: 'Confirm password',
+                  hintText: '38'.tr,
                   icon: Icons.lock_rounded,
                   isSecure: true,
                   controller: controller.confirmPasswordField,
@@ -58,7 +57,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 CustomPrimaryButton(
                   bottomPadding: 20.0,
                   topPadding: 0.0,
-                  buttonText: 'Submit',
+                  buttonText: '39'.tr,
                   onPressed: () {
                     controller.resetPassword();
                   },

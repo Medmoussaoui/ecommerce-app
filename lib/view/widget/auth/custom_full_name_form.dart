@@ -13,14 +13,14 @@ class CustomFullNameForm extends GetView<SignUpController> {
         Expanded(
           child: CustomTextFormAuth(
             controller: controller.firstNameController,
-            hintText: 'First name',
+            hintText: '44'.tr,
           ),
         ),
         const SizedBox(width: 15),
         Expanded(
           child: CustomTextFormAuth(
             controller: controller.lastNameController,
-            hintText: 'Last name',
+            hintText: '45'.tr,
           ),
         ),
       ],

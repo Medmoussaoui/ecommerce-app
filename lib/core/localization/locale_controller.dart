@@ -15,11 +15,7 @@ class LocaleController extends GetxController {
   changeLang(String langcode) async {
     await myServices.sharedPreferences.setString('lang', langcode);
     language = Locale(langcode);
-    if (langcode == "ar") {
-      appTheme = AppTheme.arabicTheme;
-    } else {
-      appTheme = AppTheme.englishTheme;
-    }
+    appTheme = langcode == "ar" ? AppTheme.arabicTheme : AppTheme.englishTheme;
     Get.updateLocale(language);
   }
 
@@ -28,11 +24,9 @@ class LocaleController extends GetxController {
     final String? lang = myServices.sharedPreferences.getString('lang');
     language =
         (lang == null) ? Locale(Get.deviceLocale!.languageCode) : Locale(lang);
-    if (language.languageCode == "ar") {
-      appTheme = AppTheme.arabicTheme;
-    } else {
-      appTheme = AppTheme.englishTheme;
-    }
+    appTheme = (language.languageCode == "ar")
+        ? AppTheme.arabicTheme
+        : AppTheme.englishTheme;
     super.onInit();
   }
 }

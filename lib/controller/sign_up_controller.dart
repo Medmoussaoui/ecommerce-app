@@ -9,11 +9,15 @@ class SignUpController extends GetxController {
   late TextEditingController passwordController;
 
   signUp() {
-    Get.toNamed(AppRoute.successSignUp);
+    redirectToVrifyCode();
   }
 
   redirectToSignIn() {
     Get.offNamed(AppRoute.signIn);
+  }
+
+  redirectToVrifyCode() {
+    Get.toNamed(AppRoute.signupVerifyEmail);
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:ecommercecourse/view/screen/auth/forgetpassword/reset_password_s
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/success_reset_password.dart';
 import 'package:ecommercecourse/view/screen/auth/sign_up.dart';
 import 'package:ecommercecourse/view/screen/auth/sign_in.dart';
+import 'package:ecommercecourse/view/screen/auth/verify_code_signup_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
 import 'package:ecommercecourse/view/screen/language_screen.dart';
 import 'package:ecommercecourse/view/screen/onboarding_screen.dart';
@@ -29,4 +30,7 @@ List<GetPage<dynamic>> routes = [
       page: () => const SuccessResetPasswordScreen()),
   GetPage(
       name: AppRoute.successSignUp, page: () => const SuccessSignUpScreen()),
+  GetPage(
+      name: AppRoute.signupVerifyEmail,
+      page: () => const SignUpVerifyCodeScreen()),
 ];

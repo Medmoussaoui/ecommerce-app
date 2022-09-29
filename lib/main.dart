@@ -1,6 +1,4 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
-import 'package:ecommercecourse/core/constant/app_theme.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/localization/app_translation.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
 import 'package:ecommercecourse/core/services/services.dart';
@@ -25,34 +23,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: localeController.appTheme,
-      /* ThemeData(
-        fontFamily: localeController.langcode == 'ar' ? 'Noto' : 'Figtree',
-        scaffoldBackgroundColor: Colors.white,
-        colorScheme:
-            ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontSize: 20.0,
-            color: AppColor.blackGrey,
-          ),
-          headline2: TextStyle(
-            fontSize: 20.0,
-            color: AppColor.blackGrey,
-            fontWeight: FontWeight.w500,
-          ),
-          bodyText1: TextStyle(
-            color: AppColor.grey,
-            fontWeight: FontWeight.w400,
-          ),
-          bodyText2: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 16.0,
-            color: AppColor.grey.withOpacity(0.5),
-          ),
-        ),
-        primaryColor: AppColor.primaryColor,
-      ),
-      */
       translations: AppTranslation(),
       locale: localeController.language,
       initialRoute: AppRoute.language,

@@ -8,14 +8,14 @@ class AppTheme {
     colorScheme:
         ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
     textTheme: TextTheme(
-      headlineMedium: TextStyle(
-        fontSize: 20.0,
-        color: AppColor.blackGrey,
-      ),
       headlineLarge: TextStyle(
         fontSize: 20.0,
         color: AppColor.blackGrey,
         fontWeight: FontWeight.w600,
+      ),
+      headlineMedium: TextStyle(
+        fontSize: 18.5,
+        color: AppColor.blackGrey,
       ),
       headlineSmall: TextStyle(
         fontSize: 17.5,
@@ -28,9 +28,9 @@ class AppTheme {
         fontSize: 13.5,
       ),
       bodyMedium: TextStyle(
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         color: AppColor.grey.withOpacity(0.4),
-        fontSize: 14.5,
+        fontSize: 14.7,
       ),
       bodyLarge: TextStyle(
         fontWeight: FontWeight.w500,
@@ -47,33 +47,34 @@ class AppTheme {
     colorScheme:
         ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
     textTheme: TextTheme(
-      headlineMedium: TextStyle(
-        fontSize: 20.0,
-        color: AppColor.blackGrey,
-      ),
       headlineLarge: TextStyle(
-        fontSize: 20.0,
+        fontSize: 17.5,
         color: AppColor.blackGrey,
         fontWeight: FontWeight.w600,
       ),
+      headlineMedium: TextStyle(
+        fontSize: 17.0,
+        fontWeight: FontWeight.w500,
+        color: AppColor.blackGrey,
+      ),
       headlineSmall: TextStyle(
-        fontSize: 17.5,
+        fontSize: 16.0,
         color: AppColor.blackGrey,
         fontWeight: FontWeight.w500,
       ),
       bodySmall: TextStyle(
-        fontWeight: FontWeight.w500,
-        color: AppColor.grey.withOpacity(0.4),
-        fontSize: 13.0,
-      ),
-      bodyMedium: TextStyle(
         fontWeight: FontWeight.w400,
         color: AppColor.grey.withOpacity(0.4),
-        fontSize: 13.7,
+        fontSize: 12.5,
+      ),
+      bodyMedium: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColor.grey.withOpacity(0.49),
+        fontSize: 14.0,
       ),
       bodyLarge: TextStyle(
         fontWeight: FontWeight.w500,
-        fontSize: 15.0,
+        fontSize: 14.5,
         color: AppColor.grey.withOpacity(0.5),
       ),
     ),

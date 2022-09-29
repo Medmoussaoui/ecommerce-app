@@ -33,11 +33,10 @@ class ForgetPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CustomAuthTitle(title: 'Forget Password'),
+                CustomAuthTitle(title: '27'.tr),
                 const SizedBox(height: 15),
-                const CustomSubTitle(
-                  subtitle:
-                      'Please enter your email address to receive a verification code',
+                CustomSubTitle(
+                  subtitle: '28'.tr,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 40.0),
@@ -49,7 +48,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 CustomPrimaryButton(
                   bottomPadding: 20.0,
                   topPadding: 0.0,
-                  buttonText: 'Send code',
+                  buttonText: '29'.tr,
                   onPressed: () {
                     controller.sendCode();
                   },

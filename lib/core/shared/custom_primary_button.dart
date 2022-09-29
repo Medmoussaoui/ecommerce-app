@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String buttonText;
+  final Widget? child;
   final double topPadding;
   final double bottomPadding;
   final void Function()? onPressed;
@@ -10,9 +11,10 @@ class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
     Key? key,
     this.onPressed,
+    this.child,
     this.bottomPadding = 22,
     this.topPadding = 0.0,
-    required this.buttonText,
+    this.buttonText = 'untitled',
   }) : super(key: key);
 
   @override
@@ -29,10 +31,14 @@ class CustomPrimaryButton extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         textColor: Colors.white,
         onPressed: onPressed,
-        child: Text(
-          buttonText,
-          style: const TextStyle(fontSize: 15.0),
-        ),
+        child: child ??
+            Text(
+              buttonText,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
       ),
     );
   }

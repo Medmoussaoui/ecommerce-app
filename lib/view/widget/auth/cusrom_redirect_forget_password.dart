@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/sign_in_controller.dart';
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +10,12 @@ class CustomRedirectForgetPassword extends GetView<SignInController> {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: controller.redirectToForgetPassword,
-      child: const Text('Forget password?'),
+      child: Text(
+        '26'.tr,
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: AppColor.primaryColor,
+            ),
+      ),
     );
   }
 }

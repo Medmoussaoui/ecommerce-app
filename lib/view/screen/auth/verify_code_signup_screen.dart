@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/forget_password_verify_code_controller..dart';
+import 'package:ecommercecourse/controller/verify_code_signup_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
@@ -9,13 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class ForgetPasswordVerifyCodeScreen extends StatelessWidget {
-  const ForgetPasswordVerifyCodeScreen({Key? key}) : super(key: key);
+class SignUpVerifyCodeScreen extends StatelessWidget {
+  const SignUpVerifyCodeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordVerifyCodeController controller =
-        Get.put(ForgetPasswordVerifyCodeController());
+    VerifyCodeSignUpController controller =
+        Get.put(VerifyCodeSignUpController());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(

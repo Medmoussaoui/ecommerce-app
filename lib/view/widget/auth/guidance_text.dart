@@ -31,7 +31,7 @@ class GuidanceText extends StatelessWidget {
           onPressed: onTap,
           child: Text(
             tapText,
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 color: AppColor.primaryColor, fontWeight: FontWeight.w600),
           ),
         ),

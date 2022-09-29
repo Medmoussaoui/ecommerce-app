@@ -9,4 +9,5 @@ class AppRoute {
   static String resetPassword = '/resetpassword';
   static String successResetPassword = '/successresetpassword';
   static String successSignUp = '/successsignup';
+  static String signupVerifyEmail = '/signupverifyemail';
 }

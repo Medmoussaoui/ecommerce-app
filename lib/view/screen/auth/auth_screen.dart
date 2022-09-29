@@ -22,11 +22,16 @@ class AuthScreen extends StatelessWidget {
             children: [
               CustomAuthTitle(title: "15".tr, fontSize: 35),
               const SizedBox(height: 30),
-              CustomSubTitle(subtitle: '16'.tr),
+              CustomSubTitle(
+                subtitle: '16'.tr,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
               const Spacer(),
               CustomPrimaryButton(
                 buttonText: '17'.tr,
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoute.signUp);
+                },
               ),
               CustomOrDivider(text: '18'.tr),
               const Padding(

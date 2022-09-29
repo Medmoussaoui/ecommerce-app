@@ -29,18 +29,18 @@ class SuccessResetPasswordScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const CustomAuthTitle(title: 'Password Changed'),
+              CustomAuthTitle(title: '40'.tr),
               const SizedBox(height: 15),
-              const CustomSubTitle(
-                subtitle: 'Your old password has been changed successfuly!',
+              CustomSubTitle(
+                subtitle: '41'.tr,
               ),
               const Spacer(flex: 2),
               CustomPrimaryButton(
                 bottomPadding: 20.0,
                 topPadding: 0.0,
-                buttonText: 'Login',
+                buttonText: '1'.tr,
                 onPressed: () {
-                  Get.toNamed(AppRoute.signIn);
+                  Get.offAllNamed(AppRoute.signIn);
                 },
               ),
             ],

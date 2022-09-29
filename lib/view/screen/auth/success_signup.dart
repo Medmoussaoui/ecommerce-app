@@ -1,6 +1,6 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
-import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
+import 'package:ecommercecourse/core/shared/cirular_progress_indicator.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +11,8 @@ class SuccessSignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+        const Duration(seconds: 2), () => Get.offAllNamed(AppRoute.signIn));
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -29,24 +31,14 @@ class SuccessSignUpScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const CustomAuthTitle(
-                title: 'Well Done!',
-                fontSize: 21.0,
-              ),
+              CustomAuthTitle(title: '47'.tr),
               const SizedBox(height: 15),
-              const CustomSubTitle(
-                subtitle:
-                    'Your account has been created successfuly press goo to visit your account',
+              CustomSubTitle(
+                subtitle: '46'.tr,
               ),
               const Spacer(flex: 2),
-              CustomPrimaryButton(
-                bottomPadding: 20.0,
-                topPadding: 0.0,
-                buttonText: 'Goo',
-                onPressed: () {
-                  Get.toNamed(AppRoute.signIn);
-                },
-              ),
+              const CustomProgressIndicator(),
+              const SizedBox(height: 20),
             ],
           ),
         ),
