@@ -18,7 +18,6 @@ class SuccessResetPasswordScreen extends StatelessWidget {
           height: Get.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(flex: 2),
               Center(
@@ -34,7 +33,7 @@ class SuccessResetPasswordScreen extends StatelessWidget {
               CustomSubTitle(
                 subtitle: '41'.tr,
               ),
-              const Spacer(flex: 2),
+              const Spacer(flex: 3),
               CustomPrimaryButton(
                 bottomPadding: 20.0,
                 topPadding: 0.0,

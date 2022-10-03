@@ -13,7 +13,7 @@ class CustomSocialMediaIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: onPressed,
       padding: const EdgeInsets.all(12.0),
       highlightElevation: 2.0,
       minWidth: 50,

@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/sign_up_controller.dart';
+import 'package:ecommercecourse/core/class/form_input_validator.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_text_form_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,8 @@ class CustomFullNameForm extends GetView<SignUpController> {
           child: CustomTextFormAuth(
             controller: controller.firstNameController,
             hintText: '44'.tr,
+            validator:
+                CustomformInputValidator.customValidate(name: "first name"),
           ),
         ),
         const SizedBox(width: 15),
@@ -21,6 +24,8 @@ class CustomFullNameForm extends GetView<SignUpController> {
           child: CustomTextFormAuth(
             controller: controller.lastNameController,
             hintText: '45'.tr,
+            validator:
+                CustomformInputValidator.customValidate(name: "last name"),
           ),
         ),
       ],

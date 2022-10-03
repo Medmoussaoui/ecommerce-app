@@ -7,9 +7,14 @@ class SignUpController extends GetxController {
   late TextEditingController firstNameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  late GlobalKey<FormState> formState;
 
   signUp() {
-    redirectToVrifyCode();
+    //redirectToVrifyCode();
+    final state = formState.currentState;
+    if (!state!.validate()) {
+      state.save();
+    }
   }
 
   redirectToSignIn() {
@@ -17,11 +22,12 @@ class SignUpController extends GetxController {
   }
 
   redirectToVrifyCode() {
-    Get.toNamed(AppRoute.signupVerifyEmail);
+    Get.toNamed(AppRoute.verifyCodeSignUp);
   }
 
   @override
   void onInit() {
+    formState = GlobalKey<FormState>();
     firstNameController = TextEditingController();
     lastNameController = TextEditingController();
     emailController = TextEditingController();

@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/sign_in_controller.dart';
+import 'package:ecommercecourse/core/class/form_input_validator.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
 import 'package:ecommercecourse/view/widget/auth/cusrom_redirect_forget_password.dart';
@@ -34,17 +35,27 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(height: 22.0),
                   CustomAuthTitle(title: "20".tr),
                   const Spacer(),
-                  CustomTextFormAuth(
-                    hintText: '22'.tr,
-                    icon: Icons.email_rounded,
-                    controller: controller.emailController,
-                  ),
-                  const SizedBox(height: 15),
-                  CustomTextFormAuth(
-                    hintText: '23'.tr,
-                    isSecure: true,
-                    icon: Icons.lock_rounded,
-                    controller: controller.passwordController,
+                  Form(
+                    key: controller.formState,
+                    child: Column(
+                      children: [
+                        CustomTextFormAuth(
+                          hintText: '22'.tr,
+                          icon: Icons.email_rounded,
+                          controller: controller.emailController,
+                          validator: CustomformInputValidator.emailValidate,
+                        ),
+                        const SizedBox(height: 15),
+                        CustomTextFormAuth(
+                          hintText: '23'.tr,
+                          isSecure: true,
+                          icon: Icons.lock_rounded,
+                          controller: controller.passwordController,
+                          validator: CustomformInputValidator.customValidate(
+                              name: "password", max: 15, min: 15),
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 5.0),
                   const Align(

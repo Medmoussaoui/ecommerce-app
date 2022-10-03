@@ -5,10 +5,15 @@ import 'package:get/get.dart';
 class SignInController extends GetxController {
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  late GlobalKey<FormState> formState;
 
   static SignInController instance = Get.find<SignInController>();
 
   signIn() {
+    final state = formState.currentState!;
+    if (!state.validate()) {
+      state.save();
+    }
     print("email ==> " + emailController.value.text);
     print("password ==> " + passwordController.value.text);
   }
@@ -23,6 +28,7 @@ class SignInController extends GetxController {
 
   @override
   void onInit() {
+    formState = GlobalKey<FormState>();
     emailController = TextEditingController();
     passwordController = TextEditingController();
     super.onInit();

@@ -11,8 +11,8 @@ class SuccessSignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(
-        const Duration(seconds: 2), () => Get.offAllNamed(AppRoute.signIn));
+    //Future.delayed(
+    //  const Duration(seconds: 2), () => Get.offAllNamed(AppRoute.signIn));
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -20,7 +20,6 @@ class SuccessSignUpScreen extends StatelessWidget {
           height: Get.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(flex: 2),
               Center(
@@ -36,7 +35,7 @@ class SuccessSignUpScreen extends StatelessWidget {
               CustomSubTitle(
                 subtitle: '46'.tr,
               ),
-              const Spacer(flex: 2),
+              const Spacer(flex: 3),
               const CustomProgressIndicator(),
               const SizedBox(height: 20),
             ],

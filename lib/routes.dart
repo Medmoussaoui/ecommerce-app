@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
+import 'package:ecommercecourse/test_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/auth_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/forget_password_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/forgetpassword/forget_password_verify_code_screen.dart';
@@ -31,6 +32,7 @@ List<GetPage<dynamic>> routes = [
   GetPage(
       name: AppRoute.successSignUp, page: () => const SuccessSignUpScreen()),
   GetPage(
-      name: AppRoute.signupVerifyEmail,
+      name: AppRoute.verifyCodeSignUp,
       page: () => const SignUpVerifyCodeScreen()),
+  GetPage(name: AppRoute.testScreen, page: () => const TestScreen()),
 ];

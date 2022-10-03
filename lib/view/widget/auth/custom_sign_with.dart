@@ -9,10 +9,10 @@ class CustomSignWith extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        CustomSocialMediaIcon(iconPath: AppImageAsset.facebook),
-        SizedBox(width: 25),
-        CustomSocialMediaIcon(iconPath: AppImageAsset.google),
+      children: [
+        const CustomSocialMediaIcon(iconPath: AppImageAsset.facebook),
+        const SizedBox(width: 25),
+        CustomSocialMediaIcon(iconPath: AppImageAsset.google, onPressed: () {}),
       ],
     );
   }

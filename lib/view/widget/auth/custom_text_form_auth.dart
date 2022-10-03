@@ -6,12 +6,15 @@ class CustomTextFormAuth extends StatefulWidget {
   final bool isSecure;
   final IconData? icon;
   final TextEditingController? controller;
-
+  final GlobalKey<FormState>? formKey;
+  final String? Function(String? input)? validator;
   const CustomTextFormAuth({
     Key? key,
     this.controller,
     required this.hintText,
     this.isSecure = false,
+    this.formKey,
+    this.validator,
     this.icon,
   }) : super(key: key);
 
@@ -21,14 +24,23 @@ class CustomTextFormAuth extends StatefulWidget {
 
 class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
   bool showPassword = false;
+  bool isSaved = false;
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
+      key: widget.formKey,
       textDirection: TextDirection.ltr,
       child: TextFormField(
+        validator: widget.validator,
+        onSaved: (input) {
+          if (!isSaved) {
+            setState(() => isSaved = true);
+          }
+        },
         controller: widget.controller,
         obscureText: widget.isSecure && !showPassword,
+        autovalidateMode: isSaved ? AutovalidateMode.always : null,
         decoration: InputDecoration(
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.bodySmall,
