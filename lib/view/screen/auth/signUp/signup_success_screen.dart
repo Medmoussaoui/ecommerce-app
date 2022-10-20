@@ -1,16 +1,20 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
-import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
+import 'package:ecommercecourse/core/shared/cirular_progress_indicator.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SuccessResetPasswordScreen extends StatelessWidget {
-  const SuccessResetPasswordScreen({Key? key}) : super(key: key);
+class SuccessSignUpScreen extends StatelessWidget {
+  const SuccessSignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () => Get.offAllNamed(AppRoute.homePage),
+    );
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -28,20 +32,14 @@ class SuccessResetPasswordScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              CustomAuthTitle(title: '40'.tr),
+              CustomAuthTitle(title: '47'.tr),
               const SizedBox(height: 15),
               CustomSubTitle(
-                subtitle: '41'.tr,
+                subtitle: '46'.tr,
               ),
               const Spacer(flex: 3),
-              CustomPrimaryButton(
-                bottomPadding: 20.0,
-                topPadding: 0.0,
-                buttonText: '1'.tr,
-                onPressed: () {
-                  Get.offAllNamed(AppRoute.signIn);
-                },
-              ),
+              const CustomProgressIndicator(),
+              const SizedBox(height: 20),
             ],
           ),
         ),

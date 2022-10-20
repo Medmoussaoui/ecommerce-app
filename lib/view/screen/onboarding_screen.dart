@@ -41,7 +41,7 @@ class OnBoardingScreen extends StatelessWidget {
                               ? '5'.tr
                               : '6'.tr,
                           onPressed: () {
-                            controller.next();
+                            controller.animateToNextScreen();
                           },
                         );
                       },

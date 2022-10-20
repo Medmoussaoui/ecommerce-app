@@ -1,8 +1,12 @@
+import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class CustomProgressIndicator extends StatefulWidget {
   final double size;
-  const CustomProgressIndicator({Key? key, this.size = 17}) : super(key: key);
+  final Color color;
+  const CustomProgressIndicator(
+      {Key? key, this.size = 18, this.color = AppColor.primaryColor})
+      : super(key: key);
 
   @override
   State<CustomProgressIndicator> createState() =>
@@ -39,8 +43,9 @@ class _CustomProgressIndicatorState extends State<CustomProgressIndicator>
           child: SizedBox(
             height: widget.size,
             width: widget.size,
-            child: const CircularProgressIndicator(
+            child: CircularProgressIndicator(
               strokeWidth: 2.0,
+              valueColor: AlwaysStoppedAnimation<Color>(widget.color),
             ),
           ),
         );

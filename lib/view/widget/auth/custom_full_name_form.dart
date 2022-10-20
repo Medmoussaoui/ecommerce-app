@@ -13,7 +13,7 @@ class CustomFullNameForm extends GetView<SignUpController> {
       children: [
         Expanded(
           child: CustomTextFormAuth(
-            controller: controller.firstNameController,
+            controller: controller.firstName,
             hintText: '44'.tr,
             validator:
                 CustomformInputValidator.customValidate(name: "first name"),
@@ -22,7 +22,7 @@ class CustomFullNameForm extends GetView<SignUpController> {
         const SizedBox(width: 15),
         Expanded(
           child: CustomTextFormAuth(
-            controller: controller.lastNameController,
+            controller: controller.lastName,
             hintText: '45'.tr,
             validator:
                 CustomformInputValidator.customValidate(name: "last name"),

@@ -1,21 +1,20 @@
-import 'package:ecommercecourse/controller/forget_password_controller.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
+import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
+import 'package:ecommercecourse/core/functions/confirm_exit_app_dialog.dart';
 import 'package:ecommercecourse/core/shared/custom_primary_button.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_auth_title.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
-import 'package:ecommercecourse/view/widget/auth/custom_text_form_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
-  const ForgetPasswordScreen({Key? key}) : super(key: key);
+class SuccessResetPasswordScreen extends StatelessWidget {
+  const SuccessResetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordController controller = Get.put(ForgetPasswordController());
     return Scaffold(
-      body: SingleChildScrollView(
+      body: WillPopScope(
+        onWillPop: confirmExitApp,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SizedBox(
@@ -23,34 +22,27 @@ class ForgetPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Spacer(),
+                const Spacer(flex: 2),
                 Center(
                   child: Image.asset(
-                    AppImageAsset.forgetPassword,
-                    color: AppColor.primaryColor,
-                    height: 90,
-                    width: 90,
+                    AppImageAsset.success,
+                    height: 135,
+                    width: 135,
                   ),
                 ),
                 const Spacer(),
-                CustomAuthTitle(title: '27'.tr),
+                CustomAuthTitle(title: '40'.tr),
                 const SizedBox(height: 15),
                 CustomSubTitle(
-                  subtitle: '28'.tr,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 40.0),
-                const CustomTextFormAuth(
-                  hintText: 'example@email.com',
-                  icon: Icons.email_rounded,
+                  subtitle: '41'.tr,
                 ),
                 const Spacer(flex: 3),
                 CustomPrimaryButton(
                   bottomPadding: 20.0,
                   topPadding: 0.0,
-                  buttonText: '29'.tr,
+                  buttonText: '1'.tr,
                   onPressed: () {
-                    controller.sendCode();
+                    Get.offAllNamed(AppRoute.signIn);
                   },
                 ),
               ],

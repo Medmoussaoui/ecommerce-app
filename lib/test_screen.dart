@@ -18,7 +18,7 @@ class TestScreen extends StatelessWidget {
             TextButton(
               child: const Text('Shop dialog'),
               onPressed: () {
-                alertDialogSimpleConfirm(
+                customalertDialogSimpleConfirm(
                   title: 'Attention!',
                   subTitle:
                       'Are you sure you want to exit app press accpet or discard that',

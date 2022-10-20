@@ -30,7 +30,7 @@ class AuthScreen extends StatelessWidget {
               CustomPrimaryButton(
                 buttonText: '17'.tr,
                 onPressed: () {
-                  Get.toNamed(AppRoute.signUp);
+                  Get.offNamed(AppRoute.signUp);
                 },
               ),
               CustomOrDivider(text: '18'.tr),
@@ -42,7 +42,7 @@ class AuthScreen extends StatelessWidget {
                 title: '19'.tr,
                 tapText: '1'.tr,
                 onTap: () {
-                  Get.toNamed(AppRoute.signIn);
+                  Get.offNamed(AppRoute.signIn);
                 },
               ),
             ],

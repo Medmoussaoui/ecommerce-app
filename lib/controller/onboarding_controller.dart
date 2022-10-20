@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/core/constant/app_routes.dart';
+import 'package:ecommercecourse/core/middleware/initial_app_midlleware.dart';
 import 'package:ecommercecourse/data/source/static/onboarding_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -17,8 +18,9 @@ class OnBoardingController extends GetxController {
     super.onInit();
   }
 
-  next() {
+  animateToNextScreen() async {
     if (currentPage.value == onBoardingList.length - 1) {
+      InitialAppMiddleware.neverShowOnBoardingAgain();
       return Get.toNamed(AppRoute.authScreen);
     }
     currentPage++;

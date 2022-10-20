@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/bindings/initial_bindings.dart';
 import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/localization/app_translation.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       translations: AppTranslation(),
       locale: localeController.language,
       initialRoute: AppRoute.language,
+      initialBinding: InitialBindings(),
       getPages: routes,
     );
   }

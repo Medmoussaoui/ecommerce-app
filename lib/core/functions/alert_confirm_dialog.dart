@@ -5,7 +5,7 @@ import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-alertDialogSimpleConfirm({
+customalertDialogSimpleConfirm({
   required String title,
   required String subTitle,
   Icon? icon,
@@ -13,7 +13,8 @@ alertDialogSimpleConfirm({
   String cancelText = "Cancel",
   void Function()? onConfirm,
   void Function()? onCancel,
-}) {
+}) async {
+  bool state = false;
   late Widget iconWidget;
   if (icon != null) {
     iconWidget = Icon(
@@ -25,7 +26,7 @@ alertDialogSimpleConfirm({
     iconWidget = const SizedBox.shrink();
   }
 
-  Get.dialog(
+  await Get.dialog(
     AlertDialog(
       contentPadding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -59,10 +60,8 @@ alertDialogSimpleConfirm({
                   child: MaterialButton(
                     height: 50,
                     onPressed: () {
-                      if (onCancel != null) {
-                        return onCancel();
-                      }
                       Get.back();
+                      if (onCancel != null) onCancel();
                     },
                     child: Text(cancelText),
                   ),
@@ -74,9 +73,9 @@ alertDialogSimpleConfirm({
                     height: 50,
                     bottomPadding: 0.0,
                     onPressed: () {
-                      if (onConfirm != null) {
-                        onConfirm();
-                      }
+                      state = true;
+                      Get.back();
+                      if (onConfirm != null) onConfirm();
                     },
                   ),
                 ),
@@ -87,4 +86,5 @@ alertDialogSimpleConfirm({
       ),
     ),
   );
+  return state;
 }
