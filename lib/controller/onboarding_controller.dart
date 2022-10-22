@@ -20,8 +20,8 @@ class OnBoardingController extends GetxController {
 
   animateToNextScreen() async {
     if (currentPage.value == onBoardingList.length - 1) {
-      InitialAppMiddleware.neverShowOnBoardingAgain();
-      return Get.toNamed(AppRoute.authScreen);
+      InitialAppMiddleware.sharedPref.sharedPreferences.setString("step", "1");
+      return Get.offAllNamed(AppRoute.authScreen);
     }
     currentPage++;
     syncanimateToPage = true;

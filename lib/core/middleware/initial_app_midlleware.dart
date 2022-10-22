@@ -6,13 +6,15 @@ import 'package:get/get.dart';
 class InitialAppMiddleware extends GetMiddleware {
   static final MyServices sharedPref = Get.find();
 
-  static neverShowOnBoardingAgain() {
-    sharedPref.sharedPreferences.setBool("initApp", true);
-  }
-
   @override
   RouteSettings? redirect(String? route) {
-    final initApp = sharedPref.sharedPreferences.get('initApp');
-    return initApp == null ? null : RouteSettings(name: AppRoute.authScreen);
+    final step = sharedPref.sharedPreferences.getString('step');
+    if (step == "2") {
+      return RouteSettings(name: AppRoute.homePage);
+    }
+    if (step == "1") {
+      return RouteSettings(name: AppRoute.authScreen);
+    }
+    return null;
   }
 }

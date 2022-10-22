@@ -5,6 +5,7 @@ import 'package:ecommercecourse/view/widget/auth/custom_sign_with.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_or_divider.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_sub_title.dart';
 import 'package:ecommercecourse/view/widget/auth/guidance_text.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,10 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseMessaging.instance.getToken().then((value) {
+      print('Device Token = ' + value!);
+    });
+
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0),
       body: Center(
