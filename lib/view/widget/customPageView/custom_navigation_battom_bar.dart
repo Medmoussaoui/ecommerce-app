@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/ForgetPassword/page_view_controller.dart';
+import 'package:ecommercecourse/controller/page_view_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

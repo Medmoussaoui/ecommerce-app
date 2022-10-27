@@ -9,7 +9,7 @@ class CustomPageViewController extends GetxController {
   onPageChange(int index) {
     currentPage.value = index;
     pageViewcController.animateToPage(
-      currentPage.value,
+      0,
       duration: const Duration(milliseconds: 400),
       curve: Curves.easeOut,
     );

@@ -1,9 +1,6 @@
-import 'package:ecommercecourse/controller/ForgetPassword/page_view_controller.dart';
+import 'package:ecommercecourse/controller/page_view_controller.dart';
 import 'package:ecommercecourse/view/widget/customPageView/custom_navigation_battom_bar.dart';
-import 'package:ecommercecourse/view/screen/pageView/favorite_screen.dart';
 import 'package:ecommercecourse/view/screen/pageView/home_screen.dart';
-import 'package:ecommercecourse/view/screen/pageView/order_tracking_screen.dart';
-import 'package:ecommercecourse/view/screen/pageView/shopping_card_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,9 +17,6 @@ class CustomPageView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         children: const [
           HomeScreen(),
-          FavoriateScreen(),
-          OrderTrackingScreen(),
-          ShoppingCardScreen(),
         ],
       ),
     );
