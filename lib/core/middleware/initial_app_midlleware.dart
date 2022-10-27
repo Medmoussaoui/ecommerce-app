@@ -10,7 +10,7 @@ class InitialAppMiddleware extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     final step = sharedPref.sharedPreferences.getString('step');
     if (step == "2") {
-      return RouteSettings(name: AppRoute.homePage);
+      return RouteSettings(name: AppRoute.customPageView);
     }
     if (step == "1") {
       return RouteSettings(name: AppRoute.authScreen);

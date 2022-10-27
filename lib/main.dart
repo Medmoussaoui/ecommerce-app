@@ -1,7 +1,7 @@
-import 'package:ecommercecourse/bindings/initial_bindings.dart';
-import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/localization/app_translation.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
+import 'package:ecommercecourse/bindings/initial_bindings.dart';
+import 'package:ecommercecourse/core/constant/app_routes.dart';
 import 'package:ecommercecourse/core/services/services.dart';
 import 'package:ecommercecourse/routes.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:ecommercecourse/controller/onboarding_controller.dart';
 import 'package:ecommercecourse/data/source/static/onboarding_data.dart';
-import 'package:ecommercecourse/view/widget/onboarding/Custom_image_slider.dart';
+import 'package:ecommercecourse/view/widget/onboarding/custom_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

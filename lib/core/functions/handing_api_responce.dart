@@ -2,7 +2,10 @@ import 'package:ecommercecourse/core/class/api_connection.dart';
 import 'package:get/get.dart';
 
 StatusRequest handleApiResponce(Response responce) {
-  final StatusRequest statusRequest = StatusRequest(data: responce.body);
+  final StatusRequest statusRequest = StatusRequest(
+    data: responce.body,
+    headers: responce.headers,
+  );
   if (responce.status.connectionError) {
     return statusRequest.connectionError();
   }

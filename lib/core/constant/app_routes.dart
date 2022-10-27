@@ -12,4 +12,5 @@ class AppRoute {
   static String verifyCodeSignUp = '/signupverifyemail';
   static String testScreen = '/testscreen';
   static String homePage = '/homepage';
+  static String customPageView = "/custompageview";
 }

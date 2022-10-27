@@ -12,8 +12,13 @@ enum ConnectionStatus {
 class StatusRequest {
   ConnectionStatus connectionStatus;
   dynamic data;
+  Map<String, String>? headers;
 
-  StatusRequest({this.connectionStatus = ConnectionStatus.none, this.data});
+  StatusRequest({
+    this.connectionStatus = ConnectionStatus.none,
+    this.data,
+    this.headers,
+  });
 
   get isRespondError => connectionStatus == ConnectionStatus.respondError;
 

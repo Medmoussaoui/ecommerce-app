@@ -10,7 +10,8 @@ import 'package:ecommercecourse/view/screen/auth/signUp/signup_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/SignIn/sign_in.dart';
 import 'package:ecommercecourse/view/screen/auth/signUp/verify_code_screen.dart';
 import 'package:ecommercecourse/view/screen/auth/signUp/signup_success_screen.dart';
-import 'package:ecommercecourse/view/screen/home_screen.dart';
+import 'package:ecommercecourse/view/screen/pageView/custom_page_view.dart';
+import 'package:ecommercecourse/view/screen/pageView/home_screen.dart';
 import 'package:ecommercecourse/view/screen/language_screen.dart';
 import 'package:ecommercecourse/view/screen/onboarding_screen.dart';
 import 'package:get/get.dart';
@@ -70,5 +71,9 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoute.homePage,
     page: () => const HomeScreen(),
+  ),
+  GetPage(
+    name: AppRoute.customPageView,
+    page: () => const CustomPageView(),
   ),
 ];

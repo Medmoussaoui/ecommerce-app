@@ -14,9 +14,7 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseMessaging.instance.getToken().then((value) {
-      print('Device Token = ' + value!);
-    });
+    FirebaseMessaging.instance.getToken().then((value) {});
 
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0),
