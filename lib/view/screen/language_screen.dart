@@ -1,8 +1,8 @@
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/localization/locale_controller.dart';
-import 'package:ecommercecourse/view/widget/Languange/custom_lang_subtitle.dart';
-import 'package:ecommercecourse/view/widget/Languange/custom_lange_title.dart';
-import 'package:ecommercecourse/view/widget/Languange/custom_preferred_lang_list.dart';
+import 'package:ecommercecourse/view/widget/languange/custom_lang_subtitle.dart';
+import 'package:ecommercecourse/view/widget/languange/custom_lange_title.dart';
+import 'package:ecommercecourse/view/widget/languange/custom_preferred_lang_list.dart';
 import 'package:ecommercecourse/view/widget/languange/custom_skip_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

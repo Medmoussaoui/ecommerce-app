@@ -9,13 +9,14 @@ class ForgetPasswordVerifyCodeController extends GetxController {
   String verifyCode = "";
   late String email;
   StatusRequest statusRequest = StatusRequest();
+  final restForgetPassword = Get.find<RestForgetPassword>();
 
   onVerify(String? code) async {
     verifyCode = code ?? verifyCode;
     if (statusRequest.isLoading || verifyCode.length != 4) return;
     statusRequest.loading();
     update();
-    statusRequest = await RestForgetPassword.verifyCode(
+    statusRequest = await restForgetPassword.verifyCode(
       Get.arguments['user_email'],
       verifyCode,
     );

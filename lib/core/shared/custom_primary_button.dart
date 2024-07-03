@@ -7,15 +7,17 @@ class CustomPrimaryButton extends StatelessWidget {
   final double topPadding;
   final double bottomPadding;
   final double height;
-  final Color color;
+  final Color? color;
+  final Color textColor;
   final void Function()? onPressed;
 
   const CustomPrimaryButton({
     Key? key,
     this.onPressed,
     this.child,
-    this.color = AppColor.primaryColor,
+    this.color,
     this.height = 57,
+    this.textColor = Colors.white,
     this.bottomPadding = 22,
     this.topPadding = 0.0,
     this.buttonText = 'untitled',
@@ -32,14 +34,14 @@ class CustomPrimaryButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(7.0),
         ),
-        color: color,
+        color: color ?? AppColor.primaryColor,
         textColor: Colors.white,
         onPressed: onPressed,
         child: child ??
             Text(
               buttonText,
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: Colors.white,
+                    color: textColor,
                     fontWeight: FontWeight.w500,
                   ),
             ),

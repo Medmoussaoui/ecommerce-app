@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/sign_in_controller.dart';
+import 'package:ecommercecourse/controller/auth/sign_in_controller.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

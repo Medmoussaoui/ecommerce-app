@@ -13,4 +13,11 @@ class AppRoute {
   static String testScreen = '/testscreen';
   static String homePage = '/homepage';
   static String customPageView = "/custompageview";
+  static String favoriteScreen = "/favorite";
+  static String searchItemsScreen = "/searchitems";
+  static String displayItemsSearchScreen = "/displayItemsSearchScreen";
+  static String itemDetailsScreen = "/ItemDetailsScreen";
+  static String shoppingCart = "/shoppingCart";
+  static String shippingScreen = "/shippingScreen";
+  static String checkOutScreen = "/checkOutScreen";
 }

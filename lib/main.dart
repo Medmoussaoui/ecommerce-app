@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: localeController.appTheme,
       translations: AppTranslation(),
       locale: localeController.language,
-      initialRoute: AppRoute.language,
+      initialRoute: AppRoute.customPageView,
       initialBinding: InitialBindings(),
       getPages: routes,
     );

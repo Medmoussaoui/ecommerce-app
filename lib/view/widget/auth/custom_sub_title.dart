@@ -5,12 +5,7 @@ class CustomSubTitle extends StatelessWidget {
   final TextAlign textAlign;
   final TextStyle? style;
 
-  const CustomSubTitle(
-      {Key? key,
-      this.style,
-      this.textAlign = TextAlign.center,
-      required this.subtitle})
-      : super(key: key);
+  const CustomSubTitle({Key? key, this.style, this.textAlign = TextAlign.center, required this.subtitle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

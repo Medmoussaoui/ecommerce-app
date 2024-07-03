@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-
 enum ConnectionStatus {
   loading,
   connectionError,
@@ -32,6 +30,8 @@ class StatusRequest {
 
   get isNone => connectionStatus == ConnectionStatus.none;
 
+  get hasData => data != null;
+
   StatusRequest success() {
     connectionStatus = ConnectionStatus.success;
     return this;
@@ -57,5 +57,3 @@ class StatusRequest {
     return this;
   }
 }
-
-class ApiConnect extends GetConnect {}

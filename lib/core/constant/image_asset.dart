@@ -15,4 +15,12 @@ class AppImageAsset {
   static const String email = "$rootImages/custom_mail.png";
   static const String resetPassword = "$rootImages/reset_password.png";
   static const String success = "$rootImages/success.png";
+  static const String visa = "$rootImages/visa.png";
+  static const String paypal = "$rootImages/paypal.png";
+  static const String mastercard = "$rootImages/mastercard.png";
+  static const String amex = "$rootImages/amex.png";
+  static const String creditCard = "$rootImages/creditCard.png";
+  static const String cashOnDelivery = "$rootImages/cash-on-delivery.png";
+  static const String paypalTwo = "$rootImages/paypal2.png";
+  static const String like = "$rootImages/like.png";
 }

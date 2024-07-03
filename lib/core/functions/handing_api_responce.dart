@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 StatusRequest handleApiResponce(Response responce) {
   final StatusRequest statusRequest = StatusRequest(
-    data: responce.body,
+    data: responce.body ?? [],
     headers: responce.headers,
   );
   if (responce.status.connectionError) {

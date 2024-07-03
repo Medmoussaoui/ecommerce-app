@@ -78,7 +78,8 @@ dependencies:
   image_pickers: ^2.0.0+2
   flutter_otp_text_field: ^1.1.1
   salomon_bottom_bar: ^3.3.1
-
+  shimmer: ^2.0.0
+  flutter_slidable:
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 class VerifyCodeSignUpController extends GetxController {
   StatusRequest statusRequestVerify = StatusRequest();
   StatusRequest statusRequestResendCode = StatusRequest();
+  final restSignUp = Get.find<RestSignUp>();
 
   String verifyCode = "";
   late String email;
@@ -18,7 +19,7 @@ class VerifyCodeSignUpController extends GetxController {
     statusRequestVerify.loading();
     update();
     await Future.delayed(const Duration(milliseconds: 700));
-    statusRequestVerify = await RestSignUp.verifyCode(email, code);
+    statusRequestVerify = await restSignUp.verifyCode(email, code);
     if (statusRequestVerify.isSuccess) {
       return redirectToSuccess();
     }
@@ -38,7 +39,7 @@ class VerifyCodeSignUpController extends GetxController {
   resendCode() async {
     statusRequestResendCode.loading();
     update();
-    statusRequestResendCode = await RestSignUp.sendVerifyCode(email);
+    statusRequestResendCode = await restSignUp.sendVerifyCode(email);
     update();
   }
 

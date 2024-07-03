@@ -10,6 +10,8 @@ class ResetPasswordController extends GetxController {
   late TextEditingController confirmPassword;
   late GlobalKey<FormState> formState;
 
+  final restForgetPassword = Get.find<RestForgetPassword>();
+
   StatusRequest statusRequest = StatusRequest();
   get isPasswordMatched => (newPassword.text == confirmPassword.text);
 
@@ -33,7 +35,7 @@ class ResetPasswordController extends GetxController {
 
     statusRequest.loading();
     update();
-    statusRequest = await RestForgetPassword.resetPassword(
+    statusRequest = await restForgetPassword.resetPassword(
       "token_access",
       Get.arguments['user_email'],
       newPassword.text,

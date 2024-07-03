@@ -36,10 +36,7 @@ class OnBoardingScreen extends StatelessWidget {
                     GetX<OnBoardingController>(
                       builder: (con) {
                         return CustomPrimaryButton(
-                          buttonText: con.currentPage.value ==
-                                  (onBoardingList.length - 1)
-                              ? '5'.tr
-                              : '6'.tr,
+                          buttonText: con.currentPage.value == (onBoardingList.length - 1) ? '5'.tr : '6'.tr,
                           onPressed: () {
                             controller.animateToNextScreen();
                           },

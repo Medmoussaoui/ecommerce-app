@@ -11,14 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class SignUpVerifyCodeScreen extends StatelessWidget {
+class SignUpVerifyCodeScreen extends GetView<VerifyCodeSignUpController> {
   const SignUpVerifyCodeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeSignUpController controller =
-        Get.put(VerifyCodeSignUpController());
-
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {
@@ -76,8 +73,7 @@ class SignUpVerifyCodeScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0),
                               fillColor: AppColor.grey.withOpacity(0.01),
                               filled: true,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 7.0),
+                              margin: const EdgeInsets.symmetric(horizontal: 7.0),
                               keyboardType: TextInputType.phone,
                               onCodeChanged: (String code) {
                                 controller.verifyCode += code;

@@ -16,8 +16,7 @@ class ForgetPasswordVerifyCodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordVerifyCodeController controller =
-        Get.put(ForgetPasswordVerifyCodeController());
+    final controller = Get.find<ForgetPasswordVerifyCodeController>();
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {

@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static final ThemeData englishTheme = ThemeData(
     fontFamily: "Figtree",
-    scaffoldBackgroundColor: Colors.white,
-    colorScheme:
-        ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
+    scaffoldBackgroundColor: Colors.grey[100],
+    colorScheme: ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
+    appBarTheme: const AppBarTheme(iconTheme: IconThemeData(color: AppColor.appBarColord)),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+    ),
     textTheme: TextTheme(
       headlineLarge: TextStyle(
         fontSize: 20.0,
@@ -43,9 +46,10 @@ class AppTheme {
 
   static final ThemeData arabicTheme = ThemeData(
     fontFamily: "Cairo",
-    scaffoldBackgroundColor: Colors.white,
-    colorScheme:
-        ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
+    scaffoldBackgroundColor: Colors.grey[100],
+    colorScheme: ThemeData().colorScheme.copyWith(primary: AppColor.primaryColor),
+    appBarTheme: const AppBarTheme(iconTheme: IconThemeData(color: AppColor.grey)),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: Colors.white),
     textTheme: TextTheme(
       headlineLarge: TextStyle(
         fontSize: 17.5,

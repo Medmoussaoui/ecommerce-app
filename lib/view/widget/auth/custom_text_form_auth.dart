@@ -7,10 +7,14 @@ class CustomTextFormAuth extends StatefulWidget {
   final IconData? icon;
   final TextEditingController? controller;
   final bool? enable;
+  final bool? filled;
+  final String? initialValue;
   final String? Function(String? input)? validator;
   const CustomTextFormAuth({
     Key? key,
     this.controller,
+    this.filled,
+    this.initialValue,
     required this.hintText,
     this.isSecure = false,
     this.enable,
@@ -31,6 +35,7 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: TextFormField(
+        initialValue: widget.initialValue,
         controller: widget.controller,
         validator: widget.validator,
         enabled: widget.enable,
@@ -42,15 +47,24 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
         obscureText: widget.isSecure && !showPassword,
         autovalidateMode: isSaved ? AutovalidateMode.always : null,
         decoration: InputDecoration(
+          filled: widget.filled,
+          fillColor: Colors.white,
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.bodySmall,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7.0),
+            borderSide: const BorderSide(
+              width: 0.5,
+              color: AppColor.grey1,
+            ),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7.0),
             borderSide: BorderSide(
-              width: 1.5,
+              width: 1.0,
               color: AppColor.primaryColor.withOpacity(0.9),
             ),
           ),

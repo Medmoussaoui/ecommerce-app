@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/sign_up_controller.dart';
+import 'package:ecommercecourse/controller/auth/sign_up_controller.dart';
 import 'package:ecommercecourse/core/class/form_input_validator.dart';
 import 'package:ecommercecourse/core/constant/image_asset.dart';
 import 'package:ecommercecourse/core/functions/confirm_exit_app_dialog.dart';
@@ -13,12 +13,11 @@ import 'package:ecommercecourse/view/widget/auth/guidance_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends GetView<SignUpController> {
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       body: WillPopScope(
         onWillPop: confirmExitApp,

@@ -1,4 +1,4 @@
-import 'package:ecommercecourse/controller/sign_up_controller.dart';
+import 'package:ecommercecourse/controller/auth/sign_up_controller.dart';
 import 'package:ecommercecourse/core/class/form_input_validator.dart';
 import 'package:ecommercecourse/view/widget/auth/custom_text_form_auth.dart';
 import 'package:flutter/cupertino.dart';

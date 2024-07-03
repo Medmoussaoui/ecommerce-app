@@ -16,7 +16,7 @@ class ResetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordController controller = Get.put(ResetPasswordController());
+    final controller = Get.find<ResetPasswordController>();
     return Scaffold(
       body: WillPopScope(
         onWillPop: confirmExitApp,

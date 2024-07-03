@@ -6,21 +6,16 @@ class CustomformInputValidator {
     bool isRequried = true,
   }) {
     return (String? input) {
-      if (isRequried) {
-        if (input!.isEmpty) {
-          return "$name is required";
-        }
+      if (isRequried && input!.isEmpty) {
+        return "$name is required";
       }
-      if (max != null) {
-        if (input!.length > max) {
-          return '$name most be less then $max character';
-        }
+      if (max != null && input!.length > max) {
+        return '$name most be less then $max character';
       }
-      if (min != null) {
-        if (input!.length < min) {
-          return '$name most be less then $min character';
-        }
+      if (min != null && input!.length < min) {
+        return '$name most be less then $min character';
       }
+      // All Valid
       return null;
     };
   }

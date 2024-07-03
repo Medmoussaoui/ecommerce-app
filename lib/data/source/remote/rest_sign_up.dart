@@ -3,16 +3,14 @@ import 'package:ecommercecourse/core/constant/api_links.dart';
 import 'package:ecommercecourse/core/functions/handing_api_responce.dart';
 import 'package:get/get.dart';
 
-class RestSignUp {
-  static ApiConnect connect = Get.find();
-
-  static Future<StatusRequest> signUp(
+class RestSignUp extends GetConnect {
+  Future<StatusRequest> signUp(
     String firstName,
     String lastName,
     String email,
     String password,
   ) async {
-    Response res = await connect.post(
+    Response res = await post(
       AppLinksApi.signUp,
       {
         "user_first_name": firstName,
@@ -24,16 +22,16 @@ class RestSignUp {
     return handleApiResponce(res);
   }
 
-  static Future<StatusRequest> sendVerifyCode(String email) async {
-    Response res = await connect.post(
+  Future<StatusRequest> sendVerifyCode(String email) async {
+    Response res = await post(
       AppLinksApi.sendVerifyCode,
       {"user_email": email},
     );
     return handleApiResponce(res);
   }
 
-  static Future<StatusRequest> verifyCode(String email, String code) async {
-    Response res = await connect.post(
+  Future<StatusRequest> verifyCode(String email, String code) async {
+    Response res = await post(
       AppLinksApi.verifyCode,
       {
         "user_email": email,

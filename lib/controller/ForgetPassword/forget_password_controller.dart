@@ -7,8 +7,10 @@ import 'package:get/get.dart';
 
 class ForgetPasswordController extends GetxController {
   late TextEditingController emailAddress;
-  StatusRequest statusRequest = StatusRequest();
   late GlobalKey<FormState> formState;
+
+  StatusRequest statusRequest = StatusRequest();
+  final restForgetPassword = Get.find<RestForgetPassword>();
 
   rediretToVerifyCode() {
     Get.toNamed(
@@ -24,7 +26,7 @@ class ForgetPasswordController extends GetxController {
     }
     statusRequest.loading();
     update();
-    statusRequest = await RestForgetPassword.sendVerfycode(emailAddress.text);
+    statusRequest = await restForgetPassword.sendVerfycode(emailAddress.text);
     update();
     if (statusRequest.isSuccess) {
       rediretToVerifyCode();

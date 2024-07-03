@@ -10,12 +10,11 @@ import 'package:ecommercecourse/view/widget/auth/custom_text_form_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
+class ForgetPasswordScreen extends GetView<ForgetPasswordController> {
   const ForgetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordController controller = Get.put(ForgetPasswordController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(

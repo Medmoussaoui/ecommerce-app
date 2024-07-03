@@ -7,41 +7,35 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 class CustomNavigaationBottomBar extends GetView<CustomPageViewController> {
   const CustomNavigaationBottomBar({Key? key}) : super(key: key);
 
+  TextStyle customTextStyle(BuildContext context, {Color? color}) {
+    color = color ?? Colors.white;
+    return Theme.of(context).textTheme.bodySmall!.copyWith(
+          fontWeight: FontWeight.w600,
+          color: color,
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetX<CustomPageViewController>(builder: (con) {
-      return SalomonBottomBar(
-        currentIndex: controller.currentPage.value,
-        onTap: (index) => con.onPageChange(index),
-        items: [
-          /// Home
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.home),
-            title: const Text("Home"),
-            selectedColor: AppColor.primaryColor,
+      return Container(
+        color: AppColor.appBarColord,
+        child: SalomonBottomBar(
+          currentIndex: controller.currentPage.value,
+          onTap: (index) => con.onPageChange(index),
+          items: List.generate(
+            controller.navigationBottomItems.length,
+            (index) => SalomonBottomBarItem(
+              icon: con.navigationBottomItems[index].icon,
+              title: Text(
+                con.navigationBottomItems[index].title,
+                style: customTextStyle(context),
+              ),
+              unselectedColor: Colors.white38,
+              selectedColor: Colors.white,
+            ),
           ),
-
-          /// Likes
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.favorite_border),
-            title: const Text("Favorite"),
-            selectedColor: Colors.pink,
-          ),
-
-          /// Search
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.shopping_cart_rounded),
-            title: const Text("Shopping Card"),
-            selectedColor: Colors.orange,
-          ),
-
-          /// Profile
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.track_changes_rounded),
-            title: const Text("Tracking"),
-            selectedColor: Colors.teal,
-          ),
-        ],
+        ),
       );
     });
   }
